@@ -1,0 +1,213 @@
+/* Entry.css */
+
+html {
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling on smaller screens */
+}
+
+/* Main container styles */
+.entry-container {
+    font-size: 30px;
+    display: flex;
+    padding: 10px;
+    height: 90vh;
+    backdrop-filter: blur(10px);
+}
+nav{
+    height: 100%;
+}
+
+.entry-title {
+    padding: 10px;
+    margin: 5px;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: height 0.3s ease, box-shadow 0.3s ease;
+}
+
+.entry-title.active {
+    height: auto;
+    /* Adjust height to content */
+    max-height: 500px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Entry content styles */
+.entry-content {
+    margin-left: 5px;
+    flex-grow: 1;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+/* Form styles */
+.entry-form {
+    margin-bottom: 30px;
+}
+
+.form-container {
+    display: flex;
+    gap: 20px;
+}
+
+.form-column {
+    flex: 1;
+    padding: 10px;
+}
+
+.add-entry-form,
+.update-entry-form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="date"],
+input[type="search"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    width: 100%;
+    /* Make input fields full width on larger screens too */
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width and height */
+}
+
+/* Button styles */
+input[type="submit"],
+input[type="reset"] {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+input[type="reset"] {
+    background-color: #f44336;
+}
+
+/* Button hover effects */
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+input[type="reset"]:hover {
+    background-color: #e53935;
+}
+
+/* Entry display styles */
+.entry-show {
+    margin-top: 20px;
+}
+
+.data {
+    font-weight: bold;
+}
+
+.entry-data {
+    color: black;
+}
+
+#entry-update-search-button,
+#entry-delete-search-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+/* Entry.css - assuming this is where the base styles are */
+
+.entry-title {
+    padding: 10px;
+    margin: 5px;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 50px; /* Default height */
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background for glass effect */
+    backdrop-filter: blur(10px); /* Blur effect for the background */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    cursor: pointer; /* Change cursor to pointer for better UX */
+    transition: height 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for height and box-shadow */
+    position: sticky;  /* Make the titles sticky */
+    top: 0;            /* Stick to the top of the menu */
+    z-index: 1;        /* Ensure the titles stay on top of other content when sticking */
+    background-color: rgba(255, 255, 255, 0.2);  /* Add the background color again as sticky elements can lose it */
+
+}
+
+.entry-title.active {
+    height: auto; /* Change to desired height when active */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2); /* Optional: Change shadow on active */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .entry-container {
+      flex-direction: column;
+      padding: 10px;
+      min-height: auto;
+    }
+
+    .entry-menu {
+      width: 100%;
+      margin: 0 0 20px;
+      overflow-y: auto; /* Make the menu scrollable */
+      max-height: 300px; /* Set max height of the menu */
+    }
+
+    .entry-content {
+      overflow: auto;
+      height: 85vh;
+      padding: 10px;
+    }
+
+    .entry-title.active {
+      overflow: auto; /* Consider if this is truly needed */
+    }
+
+    .form-container {
+      display: block;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    input[type="date"],
+    input[type="search"] {
+      font-size: 14px;
+      padding: 8px;
+      width: 100%;
+      box-sizing: border-box; /* Include padding and border in width */
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      font-size: 14px;
+      padding: 8px;
+      width: auto;
+      margin: 5px 0;
+    }
+}

@@ -1,0 +1,70 @@
+/* Header.css */
+
+.header {
+    width: 98%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #282c34; /* Dark background */
+    color: white; /* Text color */
+}
+
+#logo {
+    height: 50px; /* Set the height of the logo */
+}
+
+.header-title {
+    text-decoration: none; /* Remove underline from link */
+    color: #61dafb; /* React blue color */
+    font-size: 24px; /* Font size for title */
+}
+
+.navigation {
+    display: flex;
+    gap: 15px; /* Space between navigation items */
+    margin-left: auto; /* Push navigation to the right */
+}
+
+.nav-item {
+    font-size: 16px; /* Font size for nav items */
+}
+
+.nav-link {
+    text-decoration: none; /* Remove underline from links */
+    color: white; /* Link color */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.nav-link:hover {
+    text-decoration: underline; /* Underline on hover for better UX */
+}
+
+/* Active link styling */
+.nav-link.active {
+    font-weight: bold; /* Highlight active link */
+    border-bottom: 2px solid #61dafb; /* Underline effect for active link */
+}
+/* Responsive styles */
+@media (max-width: 600px) {
+    .header {
+      padding: 15px;
+      width: 100%;
+      display: flex; /* Important: Enable flexbox on the header */
+      justify-content: space-between; /* Push navigation to the right */
+      align-items: center; /* Vertically align header content */
+    }
+  
+    .navigation {
+      flex-direction: column;
+      gap: 5px;
+      width: auto; /* Adjust width to content */
+      margin-left: auto; /* Push navigation to the right */
+      margin-right: 0;   /* Reset right margin */
+    }
+  
+    .nav-item {
+      width: 100%;
+    }
+  }
+  

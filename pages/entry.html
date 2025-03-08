@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/Entry.css">
+    <script src="../js/entry.js"></script>
+    <script src="../js/loader.js"></script>
+    <title>Entry</title>
+</head>
+
+<body>
+    <div class="pheader"></div>
+    <div class="entry-container">
+        <nav class="menu" style="display: block;"> <!-- Assuming menu is visible by default -->
+            <!-- Menu content goes here -->
+        </nav>
+        <div class="entry-content">
+            <div id="entry-main">
+                <div class="entry-title">
+                    <div align="center">Add</div><br />
+                    <div id="entry-error-add" align="center"></div>
+                    <!-- Add Form -->
+                    <form method="post" id="entry-form-add">
+                        <div class="form-container">
+                            <div class="form-column">
+                                <label for="entry-srno">Sr.No</label><br />
+                                <input type="text" id="entry-srno" /><br />
+
+                                <label for="entry-date">Date</label><br />
+                                <input type="date" id="entry-date" /><br />
+
+                                <label for="entry-from">From</label><br />
+                                <input type="text" id="entry-from" /><br />
+
+                                <label for="entry-to">To</label><br />
+                                <input type="text" id="entry-to" /><br />
+
+                                <label for="entry-transport-name">Transport Name</label><br />
+                                <input type="text" id="entry-transport-name" /><br />
+
+                                <label for="entry-owner-name">Owner Name</label><br />
+                                <input type="text" id="entry-owner-name" /><br />
+
+                                <label for="entry-vehicle-number">Vehicle Number</label><br />
+                                <input type="text" id="entry-vehicle-number" /><br />
+
+                            </div>
+
+                            <div class="form-column">
+                                <label for="entry-size-weight">Size and Weight</label><br />
+                                <input type="text" id="entry-size-weight" /><br />
+                                <label for="entry-rate">Rate</label><br />
+                                <input type="text" id="entry-rate" /><br />
+
+                                <label for="entry-advance">Advance</label><br />
+                                <input type="text" id="entry-advance" /><br />
+
+                                <label for="entry-balance">Balance</label><br />
+                                <input type="number" id="entry-balance" /><br />
+
+                                <label for="entry-other">Other</label><br />
+                                <input type="text" id="entry-other" /><br />
+
+                                <label for="entry-balance-paid">Balance Paid</label><br />
+                                <input type="radio" id="entry-balance-paid-yes" name="entry-balance-paid"
+                                    value="1" />Yes
+                                <input type="radio" name="entry-balance-paid" value="0" />No<br />
+
+                                <label for="entry-balance-other">Balance Other</label><br />
+                                <input type="text" id="entry-balance-other" /><br />
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <div align="center"><input type="submit" value="Add" /></div>
+                            <div align="center"><input type="reset" /></div>
+                        </div>
+                    </form>
+                </div>
+                <!-- End Add Form -->
+                <div class="entry-title">
+                    <div align="center">Update</div><br />
+                    <!-- Update Form -->
+                    <div id='update-error'></div>
+                    <div id="entry-error-update" align="center"></div>
+                    <form method="post" id="entry-form-update-search">
+                        <label for="entry-update-srno">Sr.No</label><br /><br />
+                        <input type="search" id="entry-update-srno" /><br />
+                        <div align="center"><input type="submit" value="Search" /></div>
+                    </form>
+                    <form method="post" id="entry-form-update" style="display: none;">
+                        <div class="form-container">
+                            <div class="form-column">
+                                <label for="entry-update-form-srno">Sr.No</label><br />
+                                <input type="text" id="entry-update-form-srno" /><br />
+                                <label for="entry-update-from">From</label><br />
+                                <input type="text" id="entry-update-from" /><br />
+                                <label for="entry-update-transport-name">Transport Name</label><br />
+                                <input type="text" id="entry-update-transport-name" /><br />
+                                <label for="entry-update-vehicle-number">Vehicle Number</label><br />
+                                <input type="text" id="entry-update-vehicle-number" /><br />
+                                <label for="entry-update-rate">Rate</label><br />
+                                <input type="text" id="entry-update-rate" /><br />
+                                <label for="entry-update-balance">Balance</label><br />
+                                <input type="number" id="entry-update-balance" /><br />
+                                <label for="entry-update-balance-paid">Balance Paid</label><br />
+                                <input type="radio" id="entry-update-balance-paid-yes" name="entry-update-balance-paid"
+                                    value="1" />Yes
+                                <input type="radio" name="entry-update-balance-paid" value="0" />No<br />
+                            </div>
+                            <div class="form-column">
+                                <label for="entry-update-date">Date</label><br />
+                                <input type="date" id="entry-update-date" /><br />
+                                <label for="entry-update-to">To</label><br />
+                                <input type="text" id="entry-update-to" /><br />
+                                <label for="entry-update-owner-name">Owner Name</label><br />
+                                <input type="text" id="entry-update-owner-name" /><br />
+                                <label for="entry-update-size-weight">Size and Weight</label><br />
+                                <input type="text" id="entry-update-size-weight" /><br />
+                                <label for="entry-update-advance">Advance</label><br />
+                                <input type="text" id="entry-update-advance" /><br />
+                                <label for="entry-update-other">Other</label><br />
+                                <input type="text" id="entry-update-other" /><br />
+                                <label for="entry-update-balance-other">Balance Other</label><br />
+                                <input type="text" id="entry-update-balance-other" /><br />
+                            </div>
+                        </div>
+                        <div align="center"><input type="submit" value="Update" /></div>
+                        <div align="center"><input type="reset" /></div>
+                    </form><br />
+                    <div align="center"><button id="entry-update-search-button" style="display: none;">Search</button>
+                    </div>
+                </div>
+                <!-- End Update Form -->
+                <div class="entry-title">
+                    <div align="center">Delete</div><br />
+                    <div id="entry-error-delete" align="center"></div>
+                    <!-- Delete Form -->
+                    <form method="post" id="entry-form-delete-search">
+                        <label for="entry-delete-srno">Sr.No</label><br /><br />
+                        <input type="search" id="entry-delete-srno" /><br />
+                        <div align="center"><input type="submit" value="Search" /></div>
+                    </form>
+                    <form method="post" id="entry-form-delete" style="display: none;">
+                        <div align="center">
+                            <span>Sr.No</span>
+                            <span id="entry-delete-srno-display" class="entry-data"></span><br />
+                            <span>From</span>
+                            <span id="entry-delete-from" class="entry-data"></span><br />
+                            <span>Transport Name</span>
+                            <span id="entry-delete-transport-name" class="entry-data"></span><br />
+                            <span>Vehicle Number</span>
+                            <span id="entry-delete-vehicle-number" class="entry-data"></span><br />
+                            <span>Rate</span>
+                            <span id="entry-delete-rate" class="entry-data"></span><br />
+                            <span>Balance</span>
+                            <span id="entry-delete-balance" class="entry-data"></span><br />
+                            <span>Balance Paid</span>
+                            <span id="entry-delete-balance-paid" class="entry-data"></span><br />
+                        </div>
+                        <div align="center">
+                            <span>Date</span>
+                            <span id="entry-delete-date" class="entry-data"></span><br />
+                            <span>To</span>
+                            <span id="entry-delete-to" class="entry-data"></span><br />
+                            <span>Owner Name</span>
+                            <span id="entry-delete-owner-name" class="entry-data"></span><br />
+                            <span>Size and Weight</span>
+                            <span id="entry-delete-size-weight" class="entry-data"></span><br />
+                            <span>Advance</span>
+                            <span id="entry-delete-advance" class="entry-data"></span><br />
+                            <span>Other</span>
+                            <span id="entry-delete-other" class="entry-data"></span><br />
+                            <span>Balance Other</span>
+                            <span id="entry-delete-balance-other" class="entry-data"></span><br />
+                        </div>
+                        <br />
+                        <div align="center"><br /><input type="submit" value="Delete" style="background-color: red;" />
+                        </div>
+                    </form><br />
+                    <div align="center"><button id="entry-delete-search-button" style="display: none;">Search</button>
+                    </div><br />
+                </div>
+                <!-- End Delete Form -->
+            </div>
+        </div>
+    </div>
+    <script src="../js/entry.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

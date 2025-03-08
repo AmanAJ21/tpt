@@ -1,0 +1,36 @@
+/* Home.css */
+
+.home-container {
+    padding: 20px; /* Padding around the home container */
+    text-align: center; /* Center align text */
+}
+
+.card-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center cards horizontally */
+    gap: 20px; /* Space between cards */
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    padding: 20px; /* Padding inside the card */
+    width: 200px; /* Fixed width for cards */
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Default text color */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.card h2 {
+    margin: 0; /* Remove default margin */
+}
+
+.card p {
+    margin-top: 10px; /* Space above paragraph text */
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/Profile.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js" defer></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/loader.js" defer></script>
+    <script src="../js/profile.js" defer></script>
+    <script src="../js/myChart.js" defer></script>
+    <title>Profile</title>
+</head>
+
+<body>
+    <div class="pheader"></div>
+    <main class="profile-main">
+        <nav class="menu" style="display: block;"> <!-- Assuming menu is visible by default -->
+            <!-- Menu content goes here -->
+        </nav>
+        <div class="profile-content">
+            <div class="profile-form">
+                <div id="error-message" class="error-message"></div>
+
+                <form method="post" class="add-profile-form" onsubmit="handleAddProfileSubmit(event)">
+                    <label for="name">Name:<br />
+                        <input type="text" id="name" required />
+                    </label><br />
+                    <label for="company-name">Company Name:<br />
+                        <input type="text" id="company-name" required />
+                    </label><br />
+                    <label for="mobile-number">Mobile No:<br />
+                        <input type="number" max="9999999999" id="mobile-number" required />
+                    </label><br />
+                    <label for="address">Address:<br />
+                        <input type="text" id="address" required />
+                    </label><br />
+                    <input type="submit" value="Submit" />
+                    <input type="reset" value="Clear" onclick="clearAddProfileForm()" />
+                </form>
+
+                <div class="profile-show" align="center">
+                    <div>Name:<br />
+                        <div id="display-name" class="data"></div>
+                    </div>
+                    <div>Company Name:<br />
+                        <div id="display-company-name" class="data"></div>
+                    </div>
+                    <div>Mobile:<br />
+                        <div id="display-mobile" class="data"></div>
+                    </div>
+                    <div>Address:<br />
+                        <div id="display-address" class="data"></div>
+                    </div>
+                </div>
+
+                <form method="post" class="update-profile-form" onsubmit="handleUpdateProfileSubmit(event)">
+                    <label for="update-name">Name:<br />
+                        <input type="text" id="update-name" required />
+                    </label>
+                    <label for="update-company-name">Company Name:<br />
+                        <input type="text" id="update-company-name" required />
+                    </label>
+                    <label for="update-mobile-number">Mobile No:<br />
+                        <input type="number" max="9999999999" id="update-mobile-number" required />
+                    </label>
+                    <label for="update-address">Address:<br />
+                        <input type="text" id="update-address" required />
+                    </label>
+                    <input type="submit" value="Update" />
+                    <input type="reset" value="Clear" onclick="clearUpdateProfileForm()" />
+                </form>
+            </div>
+
+            <div style="text-align: center;">
+                <div>Graph</div>
+                <div class="chart-container">
+                    <canvas id="myChart"></canvas>
+                </div>
+                <br />
+                <span id="remaining-info" style="color: red;">Remaining</span><br />
+                <input type="button" class="update-profile-button" value="Update Profile"
+                    onclick="showUpdateProfileForm()" /><br />
+                <input type="button" class="update-password-button" value="Update Password"
+                    onclick="togglePasswordUpdateForm()" />
+
+                <div id="password-update-form" style="display: none; font-size: 30px;">
+                    <form method="post" class="password-form">
+                        <input type="text" name="email" value="..." autocomplete="username email"
+                            style="display: none;" />
+                        <label for="current-password">Current Password<br />
+                            <input type="password" id="current-password" required
+                                autocomplete="current-password" /></label><br />
+                        <label for="new-password">New Password<br />
+                            <input type="password" id="new-password" required
+                                autocomplete="new-password" /></label><br />
+                        <label for="retype-new-password">Re-Type New Password<br />
+                            <input type="password" id="retype-new-password" required
+                                autocomplete="new-password" /></label><br />
+                        <input type="submit" value="Update" />
+                        <input type="reset" value="Clear" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

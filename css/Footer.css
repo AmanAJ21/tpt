@@ -1,0 +1,83 @@
+/* Footer.css */
+
+.footer {
+    background-color: #282c34; /* Dark background */
+    color: white; /* Text color */
+    padding: 20px; /* Padding around the footer */
+    text-align: center; /* Center text within the footer */
+    font-family: Arial, sans-serif; /* Font family for the footer */
+}
+
+.footer img{
+    filter: invert(1);
+}
+.footer-copyright {
+    margin-bottom: 15px; /* Space below copyright text */
+}
+
+.footer-social {
+    margin-bottom: 15px; /* Space below social links section */
+}
+
+.social-list {
+    list-style-type: none; /* Remove bullet points from list */
+    padding: 0; /* Remove default padding */
+}
+
+.social-item {
+    display: inline; /* Display items inline */
+    margin-right: 15px; /* Space between social items */
+}
+
+.social-link {
+    text-decoration: none; /* Remove underline from links */
+    color: white; /* Link color */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.social-link:hover {
+    color: #61dafb; /* Change link color on hover (React blue) */
+}
+
+.social-icon {
+    width: 20px; /* Set size of social media icons */
+    height: 20px; /* Set size of social media icons */
+    vertical-align: middle; /* Align icon with text */
+    margin-right: 5px; /* Space between icon and text */
+}
+
+.footer-address {
+    margin-top: 15px; /* Space above address section */
+}
+
+.address-item {
+    display: block; /* Each address item on a new line */
+    margin-bottom: 10px; /* Space between address items */
+}
+
+.address-icon {
+    width: 16px; /* Set size of address-related icons */
+    height: 16px; /* Set size of address-related icons */
+    vertical-align: middle; /* Align icon with text */
+    margin-right: 5px; /* Space between icon and text */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 600px) {
+    .footer {
+        padding: 15px; /* Reduce padding on smaller screens */
+        font-size: 14px; /* Slightly smaller font size for mobile devices */
+    }
+
+    .social-list {
+        display: flex;
+        flex-direction: column; /* Stack social links vertically on small screens */
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .social-item {
+        margin-right: 0; /* Remove right margin for stacked items */
+        margin-bottom: 10px; /* Add space below each item when stacked */
+    }
+}

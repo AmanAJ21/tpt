@@ -1,0 +1,208 @@
+/* Form.css */
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Gradient background */
+}
+
+/* Main container for centering the form */
+.main-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: calc(100vh - 100px); /* Adjust based on header/footer height */
+}
+
+.login-container { /* Changed from #mlogin to .login-container for better semantics */
+    width: 90%; /* Adjusted for better responsiveness */
+    max-width: 400px; /* Set a maximum width for larger screens */
+    background-color: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
+    backdrop-filter: blur(5px); /* Increased blur effect for the background */
+    border-radius: 1rem; /* Rounded corners */
+    padding: 2rem; /* Padding around the form */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15vh; /* Space from top */
+    font-size: 20px; /* Font size */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Subtle shadow effect */
+}
+
+/* Header style for the login form */
+.login-title {
+    text-align: center; /* Center align header text */
+    margin-bottom: 20px; /* Space below header */
+    color: white; /* Title color */
+}
+
+/* Label styles */
+.login-container label {
+    display: block; /* Block display for labels */
+    margin-bottom: 10px; /* Space below labels */
+    color: white; /* Label color */
+}
+
+/* Input styles for email and password fields */
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding inside inputs */
+    border: none; /* Remove default border */
+    border-bottom: 1px solid white; /* Bottom border for inputs */
+    background-color: transparent; /* Transparent background for inputs */
+    margin-bottom: 20px; /* Space below inputs */
+    font-size: 15px; /* Font size for inputs */
+    color: white; /* Text color for inputs */
+
+    transition: border-bottom-color 0.3s ease; /* Smooth transition on focus */
+}
+
+/* Input focus styles to enhance user experience */
+.login-container input[type="email"]:focus,
+.login-container input[type="password"]:focus {
+    outline: none; /* Remove default outline on focus */
+    border-bottom-color: #4CAF50; /* Change bottom border color on focus (green) */
+}
+
+/* Button styles for submit and reset buttons */
+.login-container input[type="submit"],
+.login-container input[type="reset"] {
+    margin-left: 5px;
+    padding: 10px 20px; /* Padding for buttons */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    color: white; /* Text color for buttons */
+
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions on hover and click */
+}
+
+/* Submit button styling with hover effect */
+.login-container input[type="submit"] {
+    background-color: #4CAF50; /* Green background for submit button */
+
+}
+
+.login-container input[type="submit"]:hover {
+   background-color: #45a049; /* Darker green on hover */ 
+   transform: translateY(-2px); /* Slight lift effect on hover */ 
+}
+
+/* Reset button styling with hover effect */
+.login-container input[type="reset"] {
+   background-color: #f44336; /* Red background for reset button */ 
+}
+
+.login-container input[type="reset"]:hover {
+   background-color: #e53935; /* Darker red on hover */ 
+   transform: translateY(-2px); /* Slight lift effect on hover */ 
+}
+
+/* Error message styling to improve visibility */
+.error-message {
+   color: red; /* Red color for error messages */
+   margin-bottom: 15px; /* Space below error message */
+   text-align: center;
+   opacity: 0; /* Start as invisible */
+   transition: opacity 1s ease-out; /* Smooth transition for opacity */
+}
+
+.error-message.visible {
+   opacity: 1; /* Fully visible when this class is added */
+}
+
+/* Keyframes for fade-in and fade-out effect */
+@keyframes fadeInOut {
+   0% {
+       opacity: 0; /* Fully transparent at start */
+       visibility: visible; /* Ensure it's visible during fade-in */
+   }
+   10% {
+       opacity: 1; /* Fully visible */
+   }
+   90% {
+       opacity: 1; /* Remain fully visible until almost the end */
+   }
+   100% {
+       opacity: 0; /* Fully transparent at the end */
+       visibility: hidden; /* Ensure it doesn't take up space in the layout */
+   }
+}
+
+
+.success-message {
+   margin-bottom: 15px; /* Space below error message */
+   text-align: center;
+   color: green; /* Green color for success messages */
+}
+
+/* Alternative options links styling*/
+.alternative-options {
+   margin-top: 15px; /* Space above options links */ 
+}
+
+.link-account,
+.link-password-reset {
+   color:white;
+   text-decoration:none;
+   transition:.3s;
+}
+
+.link-account:hover,
+.link-password-reset:hover {
+   text-decoration :underline;
+}
+
+/* Loader Styles (if applicable) */
+
+.loader {
+   margin:auto;
+   width :50px ;
+   aspect-ratio :1 ;
+   display:grid ;
+   border :4px solid transparent ;
+   border-radius :50% ;
+   border-right-color :#25b09b ;
+   animation :l15 1s infinite linear ;
+}
+.loader::before,
+.loader::after{
+   content :"" ;
+   grid-area :1/1 ;
+   margin :2px ;
+   border :inherit ;
+   border-radius :50% ;
+   animation :l15 2s infinite ;
+}
+.loader::after{
+   margin :8px ;
+   animation-duration :3s ;
+}
+@keyframes l15{
+   100%{
+      transform :rotate(1turn) ;
+   }
+}
+.loader{
+   display: none;
+}
+/* Media Queries */
+
+@media screen and (max-width:750px){
+  
+   #hoption{
+      display:none ;/* Hide options on smaller screens */ 
+   }
+   
+   .login-container{
+      width :90%;/* Ensure login form is responsive */ 
+   }
+   .main-container{
+      margin-bottom: 15%;
+   }
+}

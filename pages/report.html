@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/Report.css">
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="../js/main.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.14/jspdf.plugin.autotable.min.js"></script>
+    <script src="../js/report.js" defer></script>
+    <script src="../js/loader.js" defer></script>
+
+    <title>Report</title>
+</head>
+
+<body>
+    <div class="pheader"></div>
+    <main class="report-container">
+        <nav class="menu">
+            <!-- Menu content goes here -->
+        </nav>
+        <div class="options-container" id="options-container">
+            <div class="option-section">
+                <button id="download-button">Download Table</button><br /><br />
+                <button class="toggle-options-button" onclick="toggleOptionsVisibility()">
+                    Show Options
+                </button>
+                <div id="search-options" class="hidden">
+                    <div id="hide-options">
+                        <br />
+                        <div class="data-tag">Data</div>
+                        <div>
+                            <input type="radio" name="search" value="All" />
+                            All<br />
+                        </div>
+                        <div>
+                            <input type="radio" name="search" value="srno" />
+                            SrNo<br />
+                            <input type="text" id="srno-input" placeholder="SrNo" style="display: none;" />
+                        </div>
+                        <div>
+                            <input type="radio" name="search" value="oname" />
+                            OName<br />
+                            <input type="text" id="oname-input" placeholder="OName" style="display: none;" />
+                        </div>
+                        <div>
+                            <input type="radio" name="search" value="tname" />
+                            TName<br />
+                            <input type="text" id="tname-input" placeholder="TName" style="display: none;" />
+                        </div>
+                        <div>
+                            <input type="radio" name="search" value="bpaid" />
+                            Bal Paid<br />
+                        </div>
+                        <div>
+                            <input type="radio" name="search" value="bnpaid" />
+                            Bal Not Paid<br />
+                        </div>
+                        <div class="sort-tag">Sort</div>
+                        <div>
+                            <input type="radio" name="sort" value="srno" />
+                            SrNo<br />
+                        </div>
+                        <div>
+                            <input type="radio" name="sort" value="date" />
+                            Date<br />
+                        </div>
+                        <div>
+                            <input type="radio" name="sort" value="tname" />
+                            TName<br />
+                        </div>
+                        <div>
+                            <input type="radio" name="sort" value="oname" />
+                            OName<br />
+                        </div>
+                        <div class="hide-tag">Hide</div>
+                        <div>
+                            <input type="checkbox" value="srno" />
+                            SrNo<br />
+                        </div>
+                        <div>
+                            <input type="checkbox" value="date" />
+                            Date<br />
+                        </div>
+                        <div>
+                            <input type="checkbox" value="from" />
+                            From<br />
+                        </div>
+                        <div>
+                            <input type="checkbox" value="to" />
+                            To<br />
+                        </div>
+                        <div>
+                            <input type="checkbox" value="tname" />
+                            TName<br />
+                        </div>
+                        <div>
+                            <input type="checkbox" value="oname" />
+                            OName<br />
+                        </div>
+                        <div>
+                            <input type="checkbox" value="vnum" />
+                            VNum<br />
+                        </div>
+                        <div>
+                            <input type="checkbox" value="size" />
+                            Size<br />
+                        </div>
+                        <div>
+                            <input type="checkbox" value="rate" />
+                            Rate<br />
+                        </div>
+                        <div>
+                            <input type="checkbox" value="adv" />
+                            Adv<br />
+                        </div>
+                        <div>
+                            <input type="checkbox" value="bal" />
+                            Bal<br />
+                        </div>
+                        <div>
+                            <input type="checkbox" value="other" />
+                            Other<br />
+                        </div>
+                        <div>
+                            <input type="checkbox" value="rbal" />
+                            RBal<br />
+                        </div>
+                        <div>
+                            <input type="checkbox" value="dbal" />
+                            DBal<br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="pdf-container">
+                <div id="pdfdata">
+                    <!-- This is where the PDF content will be rendered -->
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        function toggleOptionsVisibility() {
+            $("#search-options").toggle();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="../css/Form.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/loader.js"></script>
+    <script src="../js/front.js"></script>
+</head>
+
+<body>
+
+    <div class="header"></div>
+
+    <main class="main-container">
+        <div class="login-container">
+            <h2 class="login-title">Create Account</h2>
+            <form name="create-account" onsubmit="return handleSubmit(event);">
+                <div id="error-message" class="error-message"></div>
+                <div id="success-message" class="success-message"></div>
+                <div class="form-group">
+                    <label for="email-input">Email:</label>
+                    <input type="email" id="email-input" name="email" required autocomplete="email"
+                        class="form-input" />
+                </div>
+                <div class="form-group">
+                    <label for="password-input">Password:</label>
+                    <input type="password" id="password-input" name="password" required autocomplete="new-password"
+                        class="form-input" />
+                </div>
+                <div class="form-group">
+                    <label for="rpassword-input">Repeat Password:</label>
+                    <input type="password" id="rpassword-input" name="rpassword" required autocomplete="new-password"
+                        class="form-input" />
+                </div>
+                <div class="form-actions">
+                    <input type="submit" value="Create Account" class="button-submit" />
+                    <input type="reset" value="Clear" class="button-reset"
+                        onclick="document.getElementById('error-message').innerText = ''; document.getElementById('success-message').innerText = '';" />
+                </div>
+                <div class="alternative-options">
+                    <a href="/login" class="link-account">Already have an account? Log In</a>
+                </div>
+            </form>
+        </div>
+    </main>
+    <div class="footer"></div>
+</body>
+
+</html>

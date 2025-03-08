@@ -1,0 +1,53 @@
+/* MHeader.css */
+
+.menu-header {
+    height: 5vh; /* Set header height */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    padding: 10px 20px; /* Padding around the header */
+    background-color: #282c34; /* Dark background */
+    color: white; /* Default text color */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+}
+
+/* Align items to the left */
+.menu-header .left-section {
+    display: flex; /* Use flexbox for icons and title */
+    align-items: center; /* Center items vertically */
+}
+
+.menu-icon {
+    width: 24px; /* Set a consistent size for icons */
+    height: 24px; /* Set a consistent size for icons */
+    margin-right: 15px; /* Space between icons and text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.2s; /* Smooth transition for hover effect */
+    filter: brightness(0) invert(1); /* Make icons white */
+}
+
+.menu-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge icon on hover */
+}
+
+.menu-logo {
+    width: 50px; /* Adjust logo size as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Title styles */
+.menu-title {
+    text-decoration: none; /* Remove underline from link */
+    font-size: 24px; /* Font size for title */
+    font-weight: bold; /* Bold title for emphasis */
+}
+
+/* Center profile text in the header */
+.profile-text {
+    margin-left: auto; /* Push profile text to the right */
+    margin-right: auto; /* Center profile text horizontally */
+}
+
+/* Additional styling for profile text if needed */
+.profile-text {
+    font-size: 18px; /* Font size for profile text */
+}

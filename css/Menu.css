@@ -1,0 +1,84 @@
+/* Menu.css */
+
+
+.menu {
+    height: 100%;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack menu items vertically */
+    justify-content: flex-start; /* Align items to start */
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background for glass effect */
+    backdrop-filter: blur(10px); /* Blur effect for the background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+    width: 250px; /* Set a fixed width for the menu */
+    transition: all 0.5s ease-in-out; /* Smooth transition */
+}
+
+.menu.hidden {
+    display: none; /* Hide menu */
+}
+
+.menu.visible {
+    display: block; /* Show menu */
+}
+
+.menu-item {
+    display: flex; /* Use flexbox for menu item layout */
+    align-items: center; /* Center items vertically within each menu item */
+    height: 60px; /* Set a fixed height for menu items to facilitate vertical centering */
+    padding: 0 10px; /* Horizontal padding to create space around items */
+}
+
+/* Use a pseudo-element to create spacing between items */
+.menu-item:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Optional divider between items */
+}
+
+.menu-link {
+    display: flex; /* Use flexbox to align icon and text properly */
+    align-items: center; /* Center text vertically with icon */
+    text-decoration: none; /* Remove underline from links */
+    color: white; /* Change text color to white */
+    font-size: 25px; /* Increased font size for links */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+    width: 100%; /* Make link fill the entire item area */
+}
+
+/* Active link styles */
+.menu-link.active {
+    font-weight: bold; /* Bold text for active link */
+    color: #4CAF50; /* Change color for active link (green) */
+}
+
+/* Hover effect for links */
+.menu-link:hover {
+    color: #007BFF; /* Change color on hover (blue) */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .menu {
+        width: 90%; /* Full width on smaller screens */
+        padding: 15px; /* Reduced padding on smaller screens */
+        height: auto; /* Allow height to adjust on smaller screens if needed */
+        justify-content: flex-start; /* Align items to start on smaller screens */
+        margin-bottom: 5px;
+    }
+
+    .menu-item {
+        height: auto; /* Allow height to adjust on smaller screens if needed */
+        padding: 10px 0; /* Vertical padding to create space around items on mobile */
+        align-items: center; /* Ensure items are centered vertically on smaller screens as well */
+    }
+
+    .menu-icon {
+        width: 20px; /* Smaller icon size on mobile */
+        height: 20px;
+        margin-right: 8px; /* Adjusted margin for smaller screens - can be removed if not needed with flexbox alignment */
+    }
+
+    .menu-link {
+        font-size: 18px; /* Slightly smaller font size on mobile, but still larger than before */
+        padding-left: 10px; /* Add some left padding to align with icon properly if needed */ 
+    }
+}

@@ -1,0 +1,173 @@
+/* Report.css */
+
+/* Main container styles */
+.report-container {
+    display: flex;
+    padding: 10px;
+    height: 90vh;
+    backdrop-filter: blur(10px);
+  }
+  
+  /* Options container styles */
+  .options-container {
+    margin-left: 5px;
+    flex-grow: 1;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; /* Vertically align items */
+    justify-content: space-around; /* Distribute items evenly */
+  }
+  
+  /* Button styles */
+  #download-button,
+  .toggle-options-button {
+    padding: 12px 20px;
+    margin: 5px; /* Use shorthand margin for simplicity */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+  }
+  
+  #download-button {
+    background-color: #4CAF50;
+  }
+  
+  .toggle-options-button {
+    background-color: #2196F3;
+  }
+  
+  /* Button hover effects */
+  #download-button:hover {
+    background-color: #45a049;
+  }
+  
+  .toggle-options-button:hover {
+    background-color: #1976D2;
+  }
+  
+  /* Section title styles */
+  .data-tag,
+  .sort-tag,
+  .hide-tag {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+  }
+  
+  /* Radio button and checkbox styles */
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  /* Input field styles for search options */
+  input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* PDF container styles to make it scrollable */
+  #pdf-container {
+    margin: auto;
+    height: 95%;
+    width: 70%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+  }
+  
+  #pdfdata {
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  
+  #pdfdata table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  #pdfdata th,
+  #pdfdata td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* Table Styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Table Header Styles */
+  thead {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  th {
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  /* Table Body Styles */
+  tbody tr {
+    transition: background-color 0.3s;
+  }
+  
+  tbody tr:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 600px) {
+    .report-container {
+      flex-direction: column;
+      padding: 10px;
+      min-height: auto;
+    }
+  
+    .options-container {
+      flex-direction: column; /* Stack options vertically */
+      align-items: stretch; /* Stretch options to full width */
+    }
+  
+    #download-button,
+    .toggle-options-button {
+      font-size: 14px;
+      padding: 8px;
+      width: 100%; /* Make buttons full width */
+      margin: 5px 0; /* Adjust margin */
+    }
+  
+    input[type="text"] {
+      font-size: 14px;
+      padding: 8px;
+      box-sizing: border-box;
+      width: 100%;
+    }
+  }
+  

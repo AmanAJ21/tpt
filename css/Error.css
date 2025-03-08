@@ -1,0 +1,36 @@
+/* Error.css */
+
+.error-container {
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    height: 100vh; /* Full height of the viewport */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    text-align: center; /* Center text */
+}
+
+.error-container h1 {
+    font-size: 72px; /* Large font size for the error code */
+    margin: 0; /* Remove default margin */
+}
+
+.error-container h2 {
+    font-size: 24px; /* Font size for the error message */
+}
+
+.error-container p {
+    margin: 10px 0; /* Space around paragraph text */
+}
+
+.error-link {
+    text-decoration: none; /* Remove underline from link */
+    color: #007BFF; /* Link color */
+    font-weight: bold; /* Bold link text */
+    margin-top: 20px; /* Space above the link */
+}
+
+.error-link:hover {
+    text-decoration: underline; /* Underline on hover for emphasis */
+}

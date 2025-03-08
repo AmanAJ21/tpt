@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Header</title>
+    <link rel="stylesheet" href="../css/MHeader.css"> <!-- Link to CSS for styling -->
+</head>
+
+<body>
+
+    <header class="menu-header" role="banner">
+        <div class="left-section">
+            <img src="../img/close.png" alt="Open menu" class="menu-icon" id="toggle-menu" onclick="toggleMenu()" />
+            <img src="../img/logistics.png" alt="Company Logo" class="menu-logo" />
+            <a href="/" class="menu-title"><strong>Transport</strong></a>
+        </div>
+        <div class="profile-text" id="profile-text"></div> <!-- Placeholder for dynamic profile text -->
+        <img src="../img/log-out.png" alt="Log Out" class="menu-icon" id='log-out' onclick="handleLogout()" />
+    </header>
+
+    <script>
+        // Simulate the dynamic behavior of the React component
+        const currentPath = window.location.pathname; // Get the current path
+
+        // Function to determine profile text based on the current route
+        const getProfileText = () => {
+            const profileTexts = {
+                '/profile': 'Profile',
+                '/report': 'Report',
+                '/entry': 'Entry'
+            };
+            return profileTexts[currentPath] || '';
+        };
+
+        // Set the profile text on page load
+        document.getElementById('profile-text').innerText = getProfileText();
+
+        // Function to toggle menu (for demonstration purposes)
+        function toggleMenu() {
+            const toggleIcon = document.getElementById('toggle-menu');
+            if (toggleIcon.src.includes("more.png")) {
+                toggleIcon.src = "../img/close.png"; // Change to close icon
+                toggleIcon.alt = "Close menu";
+                $(".menu").css("display", "block")
+            } else {
+                toggleIcon.src = "../img/more.png"; // Change to open icon
+                toggleIcon.alt = "Open menu";
+                $(".menu").css("display", "none")
+
+            }
+            // Additional logic for showing/hiding menu can be added here
+        }
+        const handleLogout = () => {
+            const reallyLogout = window.confirm("Do you really want to log out?"); // Use window.confirm
+            if (reallyLogout) {
+                sessionStorage.clear(); // Clear all session storage
+                window.location.href = "/login"; // Redirect to login page
+            }
+        };
+
+    </script>
+
+</body>
+
+</html>

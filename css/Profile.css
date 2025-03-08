@@ -1,0 +1,248 @@
+/* Profile.css */
+html {
+    overflow: hidden;
+}
+
+/* Main container styles */
+.profile-main {
+    font-size: 30px;
+    display: flex;
+    padding: 10px;
+    height: 90vh;
+    backdrop-filter: blur(10px);
+}
+
+
+
+/* Profile content styles */
+.profile-content {
+    margin-left: 5px;
+    flex-grow: 1;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+/* Form styles */
+.profile-form {
+    margin-bottom: 30px;
+    /* Space below the form */
+}
+
+.add-profile-form,
+.update-profile-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center form elements horizontally */
+    justify-content: center;
+    /* Center form elements vertically */
+    width: 100%;
+    /* Optional: Set a width for the form */
+    max-width: 400px;
+    /* Optional: Set a maximum width for the form */
+    margin: 0 auto;
+    /* Center the form container itself */
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"] {
+    width: 100%;
+    /* Make input fields take full width of the form */
+    max-width: 300px;
+    /* Optional: Set a maximum width for input fields */
+    padding: 10px;
+    /* Padding inside input fields */
+    border: 1px solid #ccc;
+    /* Border around input fields */
+    border-radius: 4px;
+    /* Rounded corners for input fields */
+    margin-bottom: 15px;
+    /* Space below input fields */
+    font-size: 16px;
+    /* Font size for better readability */
+}
+
+label {
+    margin-bottom: 5px;
+    /* Space below labels */
+}
+
+/* Button styles */
+input[type="submit"],
+input[type="reset"] {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 120px;
+    padding: 10px 15px;
+    /* Padding for buttons */
+    border: none;
+    /* Remove default border */
+    border-radius: 4px;
+    /* Rounded corners for buttons */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    background-color: #4CAF50;
+    /* Green background for submit button */
+    color: white;
+    /* White text color for buttons */
+    transition: background-color 0.3s ease;
+    /* Smooth transition on hover */
+}
+
+input[type="reset"] {
+    background-color: #f44336;
+    /* Red background for reset button */
+}
+
+/* Button hover effects */
+input[type="submit"]:hover {
+    background-color: #45a049;
+    /* Darker green on hover */
+}
+
+input[type="reset"]:hover {
+    background-color: #e53935;
+    /* Darker red on hover */
+}
+
+/* Profile display styles */
+.profile-show {
+    margin-top: 20px;
+    /* Space above profile display section */
+}
+
+.data {
+    font-weight: bold;
+    /* Bold text for displayed data */
+}
+
+/* Graph section styles (if applicable) */
+/* Graph section styles (if applicable) */
+/* Parent container for the chart */
+.chart-container {
+    display: flex;
+    /* Use flexbox */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically if needed */
+    margin-top: 20px;
+    /* Space above the chart container */
+}
+
+/* Graph section styles (if applicable) */
+#myChart {
+    background-color: white;
+    /* Set the canvas background color to white */
+    width: 100%;
+    /* Full width of the parent container */
+    max-width: 600px;
+    /* Maximum width for the chart */
+    height: 400px;
+    /* Set a fixed height for the chart */
+    border: 1px solid #ccc;
+    /* Light gray border around the chart */
+    border-radius: 8px;
+    /* Rounded corners for the chart */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow effect */
+}
+
+/* Update password form styles */
+.password-form {
+    margin-top: 20px;
+    /* Space above password form section */
+}
+
+/* Button styles */
+input[type="button"].update-profile-button,
+input[type="button"].update-password-button {
+    padding: 10px 15px;
+    /* Padding for buttons */
+    border: none;
+    /* Remove default border */
+    border-radius: 4px;
+    /* Rounded corners for buttons */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    font-size: 16px;
+    /* Font size for better readability */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Smooth transition on hover */
+    margin: 10px 10px;
+    /* Space above and below buttons */
+}
+
+/* Specific styles for Update Profile button */
+input[type="button"].update-profile-button {
+    background-color: #4CAF50;
+    /* Green background for Update Profile button */
+    color: white;
+    /* White text color */
+}
+
+/* Specific styles for Update Password button */
+input[type="button"].update-password-button {
+    background-color: #f44336;
+    /* Red background for Update Password button */
+    color: white;
+    /* White text color */
+}
+
+/* Button hover effects */
+input[type="button"].update-profile-button:hover {
+    background-color: #45a049;
+    /* Darker green on hover */
+    transform: scale(1.05);
+    /* Slightly enlarge on hover */
+}
+
+input[type="button"].update-password-button:hover {
+    background-color: #e53935;
+    /* Darker red on hover */
+    transform: scale(1.05);
+    /* Slightly enlarge on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .profile-main {
+        flex-direction: column; /* Stack items vertically */
+        padding: 10px;        /* Reduced padding */
+        height: auto;          /* Adjust height to content */
+        overflow: auto;        /* Enable scrollbar if content overflows */
+    }
+
+    .profile-menu {
+        width: 100%;          /* Full width on small screens */
+        margin-right: 0;       /* Remove right margin */
+        margin-bottom: 20px;   /* Add space below menu */
+    }
+
+    .profile-content { /*  REPLACE this with the actual class name of your profile content container */
+        overflow: auto;      /* Enable scrollbar if content overflows */
+        max-height: 85vh;    /* Optional: Set a maximum height; adjust as needed */
+        padding: 10px;       /* Add some padding for better appearance */
+      }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="password"] {
+        font-size: 14px;      /* Smaller font size */
+        padding: 8px;          /* Adjust padding */
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+        font-size: 14px;      /* Smaller font size */
+        padding: 8px;          /* Adjust padding */
+        width: auto;           /* Adjust width to content */
+        margin-top: 5px;       /* Add space above button */
+        margin-bottom: 5px;    /* Add space below button */
+    }
+}

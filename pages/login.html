@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/Form.css">
+    <script src="../js//main.js"></script>
+    <script src="../js/loader.js"></script>
+    <script src="../js/front.js"></script>
+    <title>Login</title>
+
+</head>
+
+<body>
+    <div class="header"></div>
+
+    <main class="main-container">
+        <div class="login-container">
+            <span class="login-title">Log In</span>
+            <form name="login" method="post">
+                <div class="error-message" id="error-message"></div>
+                <div class="form-group">
+                    <label for="email-input">Email:</label>
+                    <input type="email" id="email-input" name="email" required autocomplete="email"
+                        class="form-input" />
+                </div>
+                <div class="form-group">
+                    <label for="password-input">Password:</label>
+                    <input type="password" id="password-input" name="password" required autocomplete="current-password"
+                        class="form-input" />
+                </div>
+                <div class="form-actions">
+                    <input type="submit" value="Log In" class="button-submit" />
+                    <input type="reset" value="Clear" class="button-reset"
+                        onclick="document.getElementById('error-message').innerText = ''" />
+                </div>
+                <div class="alternative-options">
+                    <a href="/create" class="link-account">Create Account</a><br />
+                    <a href="/reset" class="link-password-reset">Reset Password</a>
+                </div>
+            </form>
+        </div>
+    </main>
+    <div class="footer"></div>
+
+</body>
+
+</html>
